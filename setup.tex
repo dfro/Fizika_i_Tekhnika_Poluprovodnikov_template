@@ -1,0 +1,85 @@
+\usepackage{ifxetex}
+
+\usepackage{geometry}
+\usepackage{extsizes}
+
+\ifxetex
+	\usepackage{polyglossia}
+	\usepackage{fontspec}
+	\usepackage{unicode-math}
+\else
+	\usepackage{cmap}                                                     
+	\usepackage[english, russian]{babel}
+	\usepackage[T2A]{fontenc}                        
+	\usepackage[utf8x]{inputenc}
+\fi
+
+\usepackage{amsthm,amsfonts,amssymb,amscd}
+\usepackage[nodisplayskipstretch]{setspace}
+\usepackage[mode=text]{siunitx}
+
+\usepackage[tableposition=top]{caption}
+\usepackage{subcaption}
+
+\usepackage{titlepage}
+\usepackage[figuresonly,nomarkers,figlist]{endfloat} % figures at the end of the file
+
+%%%Settings
+
+\geometry{a4paper,top=2.5cm,bottom=2.5cm,left=3cm,right=2cm}
+
+\ifxetex
+	\setmainlanguage{russian}
+	\setotherlanguage{english}
+	\defaultfontfeatures{Ligatures=TeX,Mapping=tex-text}
+	\setmainfont{Times New Roman}
+  % fonts for figures
+	\setmathfont[version={sfmath}]{Arial Italic}
+	\setmathfont[version={normalmath}]{Latin Modern Math}
+	\setmathfont{Latin Modern Math}
+	\setsansfont{Arial}
+\else
+	% patch \efloat@iwrite to use \protected@write
+	\makeatletter
+	\renewcommand\efloat@iwrite[1]{%
+		\immediate\expandafter\protected@write\csname efloat@post#1\endcsname{}}
+	\makeatother
+\fi
+
+\sisetup{
+	exponent-product = \cdot,
+	output-decimal-marker = {.},
+	separate-uncertainty = true,
+	list-separator = {; },
+	list-final-separator = { и },
+	list-pair-separator = { и },
+	list-units=single,
+	valuesep = {~},
+	range-phrase = \,--\,,
+	range-units=single,
+}
+
+\usepackage{titlesec} 
+\titleformat{\section}
+{\normalfont\normalsize\bfseries}{\thesection.~}{1em}{}
+
+\titleformat{\subsection}
+{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+\captionsetup[figure]{labelsep=endash,justification=centerlast,singlelinecheck=off}
+\captionsetup[subfigure]{labelfont={normalsize,rm,it}}
+
+\makeatletter
+\def\thesubfigure{\textit{\alph{subfigure}}}
+\providecommand\thefigsubsep{,\,}
+\def\p@subfigure{\@nameuse{thefigure}\thefigsubsep}
+\makeatother
+
+\usepackage[titles]{tocloft}
+\renewcommand{\cftfigpresnum}{\figurename~}		% Формат списка иллюстраций
+\renewcommand{\cftfignumwidth}{3em}
+\renewcommand{\cftbeforefigskip}{14pt}
+\cftpagenumbersoff{figure}

@@ -1,0 +1,73 @@
+\documentclass[14pt]{extarticle}
+\input{setup}
+
+\begin{document}
+\title{Название статьи на русском языке}
+\author{И.\,О.~Фамилия$^{\,\P}$, И.\,О.~Соавтор}
+\address{Физико-технический институт им. А. Ф. Иоффе Российской академии наук, \\
+		194021 Санкт-Петербург, Россия.}
+\mail{mymail@site.ru}
+\maketitle
+
+\begin{abstract}
+	Аннотация является „визитной карточкой“ работы и самодостаточным документом,
+	в ней не должно быть аббревиатур и ссылок на другие работы. Она должна быть краткой
+	(не более 100 слов), но емкой. Аннотация набирается прямым шрифтом того же размера
+	и с тем же интервалом, что и весь текст статьи, и печатается на отдельной странице.
+\end{abstract}
+
+
+\begin{otherlanguage}{english}
+	\title{Translation of russian title to english}
+	\author{Author1$^{\,\P}$, Author2}
+	\address{Ioffe Physicotechnical Institute, Russian Academy of Sciences, \\
+			194021 St. Petersburg, Russia.}
+	\maketitle
+	
+	\begin{abstract}
+		A Separate page with annotation in English. It contains the title of the article (in bold), authors names in the author's transcription, the names and addresses of organizations (zip code, city, country) and translation of Russian annotation to English.  Recommended to change the spacing between lines to double spacing for a possible correction by the translator.
+	\end{abstract}
+\end{otherlanguage}
+
+\section{Введение}
+\cite{ref1,ref2,ref3} \\
+\cite{ref4,ref5} \\
+\cite{ref6} \\
+\cite{ref7,ref8,ref9} \\
+
+Правильное написание величин с десятичным множителем: \SI{1,1e23}{см^{-3}}. \par
+Интервалы значений правильно даются как \SIrange{1}{2}{А}. \par
+\section{Методика эксперимента}
+
+Каждый рисунок должен быть выполнен на отдельном листе стандартного формата А4,
+в том числе и рисунки с буквенными обозначениями (например, рис.~\ref{fig1} и рис.~\ref{fig2} выполняются на двух листах).
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[]{80mm}
+		\includegraphics[width=\columnwidth]{example-image-a}
+		\caption[]{\label{fig1}}
+	\end{subfigure}
+	\caption[]{\subref{fig1}}
+\end{figure}
+
+\begin{figure}
+	\ContinuedFloat
+	\centering
+	\begin{subfigure}[]{80mm}
+
+		\includegraphics[width=\columnwidth]{example-image-b}
+		\caption[]{\label{fig2}}
+	\end{subfigure}
+	\caption[Название рисунка, которое будет выводиться в списке иллюстраций]{\label{fig}}
+\end{figure}
+
+\section{Экспериментальные результаты}
+
+\section{Заключение}
+
+\newpage
+\bibliographystyle{semicond}
+\bibliography{biblio}
+
+\end{document}
