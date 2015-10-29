@@ -3,19 +3,21 @@
 \usepackage{geometry}
 \usepackage{extsizes}
 
+\usepackage{amsthm,amsfonts,amssymb,amscd}
+\usepackage[intlimits, sumlimits]{amsmath}
+\usepackage[nodisplayskipstretch]{setspace}
+
 \ifxetex
+	\usepackage{unicode-math}
 	\usepackage{polyglossia}
 	\usepackage{fontspec}
-	\usepackage{unicode-math}
 \else
 	\usepackage{cmap}                                                     
-	\usepackage[english, russian]{babel}
 	\usepackage[T2A]{fontenc}                        
 	\usepackage[utf8x]{inputenc}
+	\usepackage[english, russian]{babel}
 \fi
 
-\usepackage{amsthm,amsfonts,amssymb,amscd}
-\usepackage[nodisplayskipstretch]{setspace}
 \usepackage[mode=text]{siunitx}
 
 \usepackage[tableposition=top]{caption}
@@ -28,6 +30,7 @@
 %%%Settings
 
 \geometry{a4paper,top=2.5cm,bottom=2.5cm,left=3cm,right=2cm}
+\onehalfspacing
 
 \ifxetex
 	\setmainlanguage{russian}
