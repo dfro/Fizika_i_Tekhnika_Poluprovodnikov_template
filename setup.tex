@@ -20,8 +20,9 @@
 
 \usepackage[tableposition=top]{caption}
 \usepackage{subcaption}
+\usepackage{indentfirst}
 
-\usepackage{titlepage}
+\usepackage{titlepage}			% formate custom titlepage
 \usepackage[figuresonly,nomarkers,figlist]{endfloat} % figures at the end of the file
 
 %%%Settings
@@ -69,8 +70,8 @@
 \titleformat{\subsubsection}
 {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
 
-\captionsetup[figure]{labelsep=endash,justification=centerlast,singlelinecheck=off}
-\captionsetup[subfigure]{labelfont={normalsize,rm,it}}
+\captionsetup[figure]{labelsep=endash,justification=raggedleft,singlelinecheck=off, skip=50pt}
+\captionsetup[subfigure]{labelfont={normalsize,rm,it}, margin=10pt, justification=raggedleft, skip=-18pt}
 
 \makeatletter
 \def\thesubfigure{\textit{\alph{subfigure}}}
@@ -80,6 +81,9 @@
 
 \usepackage[titles]{tocloft}
 \renewcommand{\cftfigpresnum}{\figurename~}		% Формат списка иллюстраций
-\renewcommand{\cftfignumwidth}{3em}
+\renewcommand{\cftfignumwidth}{4em}
 \renewcommand{\cftbeforefigskip}{14pt}
 \cftpagenumbersoff{figure}
+
+\addto\captionsrussian{%
+	\renewcommand\listfigurename{Список подрисуночных подписей}}

@@ -30,10 +30,10 @@
 \end{otherlanguage}
 
 \section{Введение}
-\cite{ref1,ref2,ref3} \\
-\cite{ref4,ref5} \\
-\cite{ref6} \\
-\cite{ref7,ref8,ref9} \\
+Проверка форматирования списка литературы\cite{ref1,ref2,ref3},
+\cite{ref4},
+\cite{ref5,ref5eng,ref6} и 
+\cite{ref7,ref8,ref9}.
 
 Правильное написание величин с десятичным множителем: \SI{1,1e23}{см^{-3}}. \par
 Интервалы значений правильно даются как \SIrange{1}{2}{А}. \par
@@ -41,6 +41,12 @@
 
 Каждый рисунок должен быть выполнен на отдельном листе стандартного формата А4,
 в том числе и рисунки с буквенными обозначениями (например, рис.~\ref{fig1} и рис.~\ref{fig2} выполняются на двух листах).
+
+\begin{equation}
+E = mc^2
+\label{eq:1}
+\end{equation}
+
 
 \begin{figure}
 	\centering
@@ -59,7 +65,13 @@
 		\includegraphics[width=\columnwidth]{example-image-b}
 		\caption[]{\label{fig2}}
 	\end{subfigure}
-	\caption[Название рисунка, которое будет выводиться в списке иллюстраций]{\label{fig}}
+	\caption[Название рисунка, которое будет выводиться в списке иллюстраций]{\subref{fig2}\label{fig}}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=80mm]{example-image-c}
+	\caption[Название второго рисунка]{\label{fig3}}
 \end{figure}
 
 \section{Экспериментальные результаты}
