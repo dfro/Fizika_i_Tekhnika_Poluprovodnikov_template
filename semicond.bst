@@ -276,11 +276,11 @@ FUNCTION {bbl.editor}
 
 FUNCTION {bbl.edby}    %  { "\bbledby{}" }
 { curlanguage "english" =
-   {"Ed.\ by"}
+   {"ed.\ by"}
    { curlanguage "ukrainian" =
       {"Під ред."}
       { curlanguage "russian" =
-         {"Под ред."}
+         {"под ред."}
          { curlanguage "german" =
             { "ed." }
             {"language is not defined: " language "edby" * * warning$ "Ed.\ by"}
