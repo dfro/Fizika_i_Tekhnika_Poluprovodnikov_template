@@ -28,7 +28,6 @@
 *.mtc0
 *.bak
 *.bat
-*.pdf
 *blx.bib
 *run.xml
 *checkpoint.ipynb
