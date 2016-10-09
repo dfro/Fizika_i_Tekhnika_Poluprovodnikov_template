@@ -1,0 +1,55 @@
+\ProvidesPackage{titlepage}[2015/08/10 v.01]
+\RequirePackage{graphicx}
+
+\newcommand*{\address}[1]{\gdef\@address{#1}}
+\newcommand*{\mail}[1]{\gdef\@mail{#1}}
+\newcommand*{\pacs}[1]{\gdef\@pacs{#1}}
+
+\renewcommand*{\maketitle}{%
+\iflanguage{russian}{%true
+	\begin{titlepage}
+	\vspace*{5cm}
+	{\centering\bfseries\@title\unskip\strut\par}
+	\vspace{2cm}
+	{\centering\itshape\@author\unskip\strut\par}
+	\vspace{2cm}
+	{\raggedright\@address\par}
+	\vfill
+	$^{\P}$ E-mail: {\@mail}
+	\end{titlepage}
+}{%false
+	{\centering\bfseries\@title\unskip\strut\par}
+	\vspace{14pt}
+	{\centering\itshape\@author\unskip\strut\par}
+	\vspace{14pt}
+	{\raggedright\@address\par}
+	\vspace{14pt}
+   	\vspace{14pt}
+}
+}
+
+\makeatletter
+\if@titlepage
+\renewenvironment{abstract}{%
+	\null\vfil
+	\@beginparpenalty\@lowpenalty
+	\begin{raggedright}%
+		{\bfseries \abstractname\vspace{-.5em}\vspace{\z@}}%
+	\end{raggedright}%
+	{\par\vfil\null}
+	\else
+	\renewenvironment{abstract}{%
+		\if@twocolumn
+		\section*{\abstractname}%
+		\else
+		\begin{raggedright}%
+			{\bfseries \abstractname\par}%
+		\end{raggedright}%
+		\iflanguage{english}{\doublespacing}{}
+%		\quotation
+		\fi}
+		\newpage
+	{\if@twocolumn\else\endquotation\fi}
+	\fi
+	\makeatother
+\endinput

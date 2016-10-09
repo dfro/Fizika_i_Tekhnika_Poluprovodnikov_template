@@ -1,0 +1,93 @@
+% !TeX program = pdflatex
+\documentclass[14pt]{extarticle}
+\input{setup}
+
+\begin{document}
+\title{Название статьи на русском языке}
+\author{И.\,О.~Фамилия$^{\,\P}$, И.\,О.~Соавтор}
+\address{Физико-технический институт им. А. Ф. Иоффе Российской академии наук, \\
+		194021, Санкт-Петербург, Россия.}
+\mail{mymail@site.ru}
+\maketitle
+
+\begin{abstract}
+	Аннотация является „визитной карточкой“ работы и самодостаточным документом,
+	в ней не должно быть аббревиатур и ссылок на другие работы. Она должна быть краткой
+	(не более 100 слов), но емкой. Аннотация набирается прямым шрифтом того же размера
+	и с тем же интервалом, что и весь текст статьи, и печатается на отдельной странице.
+\end{abstract}
+
+
+\begin{otherlanguage}{english}
+	\title{Translation of russian title to english}
+	\author{Author1$^{\,\P}$, Author2}
+	\address{Ioffe Physicotechnical Institute, Russian Academy of Sciences, \\
+			194021, St. Petersburg, Russia.}
+	\maketitle
+	
+	\begin{abstract}
+		A Separate page with annotation in English. It contains the title of the article (in bold), authors names in the author's transcription, the names and addresses of organizations (zip code, city, country) and translation of Russian annotation to English.  Recommended to change the spacing between lines to double spacing for a possible correction by the translator.
+	\end{abstract}
+\end{otherlanguage}
+
+\section{Введение}
+Проверка форматирования списка литературы~\cite{ref1,ref2,ref3},
+\cite{ref4},
+\cite{ref5,ref5eng,ref6} и 
+\cite{ref7,ref8,ref9}.
+
+Правильное написание величин с десятичным множителем: 
+\num{1,1e23}\,\ph{\si{\cm^{-3}}}. \par
+Интервалы значений правильно даются как \numrange{1}{2}\,\ph{\si{\angstrom}}. 
+\par
+
+\textit{Химические формулы, математические символы, сокращения (в том числе в 
+индексах), единицы измерения} набираются прямым шрифтом и помечаются скобкой 
+снизу (например, \ph{\ce{CuO}}, \ph{$\cos$}, \ph{LO}-фононы, 
+\ph{\si{\eV}})
+\section{Методика эксперимента}
+
+Каждый рисунок должен быть выполнен на отдельном листе стандартного формата А4,
+в том числе и рисунки с буквенными обозначениями (например, рис.~\ref{fig1} и рис.~\ref{fig2} выполняются на двух листах).
+
+\begin{equation}
+E = mc^2
+\label{eq:1}
+\end{equation}
+
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[]{80mm}
+		\includegraphics[width=\columnwidth]{example-image-a}
+		\caption[]{\label{fig1}}
+	\end{subfigure}
+	\caption[]{\subref{fig1}}
+\end{figure}
+
+\begin{figure}
+	\ContinuedFloat
+	\centering
+	\begin{subfigure}[]{80mm}
+
+		\includegraphics[width=\columnwidth]{example-image-b}
+		\caption[]{\label{fig2}}
+	\end{subfigure}
+	\caption[Название рисунка, которое будет выводиться в списке иллюстраций]{\subref{fig2}\label{fig}}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=80mm]{example-image-c}
+	\caption[Название второго рисунка]{\label{fig3}}
+\end{figure}
+
+\section{Экспериментальные результаты}
+
+\section{Заключение}
+
+\newpage
+\bibliographystyle{semicond}
+\bibliography{biblio}
+
+\end{document}
