@@ -103,8 +103,9 @@
 
 % add brakets under abbriviations, equations and units
 \newcommand\ph[1]{%
-    \raisebox{-2\height}{\rule{.5pt}{3pt}\rule{\widthof{#1}}{.5pt}\rule{.5pt}{3pt}}%
+    \raisebox{-0.7em}{\rule{.5pt}{3pt}\rule{\widthof{#1}}{.5pt}\rule{.5pt}{3pt}}%
     \llap{#1}}
+
 
 \let\oldce\ce
 \renewcommand{\ce}[1]{\ph{\oldce{#1}}}
