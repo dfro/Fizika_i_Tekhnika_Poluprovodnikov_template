@@ -103,7 +103,7 @@
 
 % add brakets under abbriviations, equations and units
 \newcommand\ph[1]{%
-    \raisebox{-0.7em}{\rule{.5pt}{3pt}\rule{\widthof{#1}}{.5pt}\rule{.5pt}{3pt}}%
+    \raisebox{-0.4em}{\rule{.5pt}{3pt}\rule{\widthof{#1}}{.5pt}\rule{.5pt}{3pt}}%
     \llap{#1}}
 
 
@@ -112,6 +112,8 @@
 
 \let\oldsi\si
 \renewcommand{\si}[1]{\ph{\oldsi{#1}}}
+
+\renewcommand{\SI}[2]{\num{#1}\,\ph{\oldsi{#2}}}
 
 \catcode`\$=\active
 \gdef$#1${\ph{\(#1\)}}
